@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <style>
+        /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: url("kibernetik.jpg");
+}
+
+/* Header me animacion parallax */
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content .btn {
+    padding: 1rem 2rem;
+    background: black;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero-content .btn:hover {
+    background: #e65a50;
+}
+
+/* Navigacioni sticky */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background: #333;
+    z-index: 1000;
+}
+
+.sticky-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.sticky-nav ul li {
+    margin: 0.5rem;
+}
+
+.sticky-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.sticky-nav ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Seksione me background */
+.section-with-bg {
+    padding: 4rem 1rem;
+    background: #fff;
+    margin: 2rem 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Kartat */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card i {
+    font-size: 3rem;
+    color: #ff6f61;
+    margin-bottom: 1rem;
+}
+
+/* Statistikat */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+/* Media Queries për Mobile */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .sticky-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Media Queries për 500px */
+@media (max-width: 500px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .section-with-bg, .section-with-cards {
+        padding: 1.5rem 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        padding: 0 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .card i {
+        font-size: 2rem;
+    }
+
+    .stats h3 {
+        font-size: 2rem;
+    }
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullizmi Kibernetik: Shkaqet, Pasojat dhe Zgjidhjet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header me animacion parallax -->
+    <header class="hero parallax">
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Bullizmi Kibernetik</h1>
+            <p class="animate__animated animate__fadeInUp">Shkaqet, Pasojat dhe Zgjidhjet</p>
+           
+        </div>
+    </header>
+
+    <!-- Navigacioni sticky me efekte hover -->
+    <nav class="sticky-nav">
+        <ul>
+            <li><a href="#hyerja"><i class="fas fa-home"></i> Hyrje</a></li>
+            <li><a href="#cfare-eshte"><i class="fas fa-question"></i> Çfarë është?</a></li>
+            <li><a href="#shkaqet"><i class="fas fa-search"></i> Shkaqet</a></li>
+            <li><a href="#pasojat"><i class="fas fa-heartbeat"></i> Pasojat</a></li>
+            <li><a href="#zgjidhjet"><i class="fas fa-handshake"></i> Zgjidhjet</a></li>
+            <li><a href="#statistikat"><i class="fas fa-chart-bar"></i> Statistika</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seksioni i Hyrjes -->
+    <section id="hyerja" class="section-with-bg">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInLeft">Hyrje</h2>
+            <p class="animate__animated animate__fadeInRight">Me përhapjen e teknologjisë dhe përdorimin masiv të internetit, bullizmi kibernetik është bërë një nga format më të përhapura të bullizmit. Ai ndodh përmes platformave online si rrjetet sociale, email-et, mesazhet dhe forume të ndryshme. Ndryshe nga bullizmi tradicional, bullizmi kibernetik mund të ndodhë në çdo moment, është anonim dhe shpesh ka një audiencë më të madhe.</p>
+            <p class="animate__animated animate__fadeInRight">Ky projekt do të analizojë në mënyrë të thelluar shkaqet e bullizmit kibernetik, ndikimet që ka tek individët dhe shoqëria, si dhe mënyrat më efektive për ta parandaluar dhe luftuar atë.</p>
+        </div>
+    </section>
+
+    <!-- Seksioni i Çfarë është Bullizmi Kibernetik -->
+    <section id="cfare-eshte" class="section-with-cards">
+        <div class="container">
+            <h2 style="color: white;" class="animate__animated animate__fadeInLeft">Çfarë është Bullizmi Kibernetik?</h2>
+            <p style="color: white; font-weight: bold;" class="animate__animated animate__fadeInRight">Bullizmi kibernetik përfshin çdo formë të sjelljes abuzive, kërcënuese ose poshtëruese që ndodh përmes internetit dhe teknologjisë dixhitale.</p>
+            <div class="card-grid">
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-comment-slash"></i>
+                    <h3>Ngacmimi në Rrjetet Sociale</h3>
+                    <p>Komente fyese, tallje, përhapje thashethemesh dhe mesazhe ofenduese në platforma si Facebook, Instagram, TikTok, Twitter, etj.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-user-secret"></i>
+                    <h3>Përhapja e Informacionit Privat</h3>
+                    <p>Shpërndarja e fotove, videove ose të dhënave personale pa leje.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-exclamation-triangle"></i>
+                    <h3>Krijimi i Profileve të Rreme</h3>
+                    <p>Përdorimi i identiteteve të rreme për të mashtruar, ngacmuar ose fyer dikë.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-ban"></i>
+                    <h3>Shantazhimi dhe Kërcënimi</h3>
+                    <p>Dërgimi i mesazheve kërcënuese ose shantazhuese për të manipuluar dikë.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-user-times"></i>
+                    <h3>Izolimi Social Online</h3>
+                    <p>Përjashtimi i dikujt nga grupet, bisedat dhe aktivitetet online për ta bërë të ndihet i padëshiruar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seksioni i Shkaqeve -->
+    <section id="shkaqet" class="section-with-bg">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInLeft">Shkaqet e Bullizmit Kibernetik</h2>
+            <p class="animate__animated animate__fadeInRight">Bullizmi kibernetik mund të jetë rezultat i disa faktorëve psikologjikë, shoqërorë dhe teknologjikë.</p>
+            <div class="card-grid">
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-mask"></i>
+                    <h3>Anonimiteti në Internet</h3>
+                    <p>Interneti u jep bullizuesve një ndjenjë anonimiteti, duke i bërë ata të ndihen të paprekshëm. Mungesa e kontaktit ballë për ballë e zvogëlon ndjesinë e përgjegjësisë për pasojat e veprimeve të tyre.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-users"></i>
+                    <h3>Presioni Shoqëror dhe Konkurrenca</h3>
+                    <p>Dëshira për të fituar vëmendje, pëlqime dhe ndjekës në rrjetet sociale mund të shtyjë disa persona të tallen me të tjerët. Xhelozia dhe konkurrenca online mund të çojnë në shpërndarjen e informacionit të rremë për të dëmtuar reputacionin e dikujt.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-balance-scale"></i>
+                    <h3>Mungesa e Ligjeve Efektive</h3>
+                    <p>Në shumë raste, nuk ka rregulla të qarta ose mbikëqyrje të mjaftueshme për të ndaluar bullizmin kibernetik. Platforma të mëdha si Facebook dhe Instagram shpesh kanë vonesa në heqjen e përmbajtjeve abuzive.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-graduation-cap"></i>
+                    <h3>Mungesa e Edukimit Dixhital</h3>
+                    <p>Shumë përdorues nuk janë të vetëdijshëm për ndikimin që mund të kenë veprimet e tyre online. Mungesa e udhëzimeve mbi sigurinë dixhitale i bën të rinjtë më të ndjeshëm ndaj abuzimit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seksioni i Pasojave -->
+    <section id="pasojat" class="section-with-cards">
+        <div class="container">
+            <h2 style="color: white;" class="animate__animated animate__fadeInLeft">Pasojat e Bullizmit Kibernetik</h2>
+            <p style="color: white; font-weight: bold;" class="animate__animated animate__fadeInRight">Ndikimi i bullizmit kibernetik mund të jetë edhe më i rëndë sesa bullizmi tradicional, pasi ai ndodh në hapësira publike dhe mund të arrijë një audiencë shumë të gjerë.</p>
+            <div class="card-grid">
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-brain"></i>
+                    <h3>Efektet Psikologjike</h3>
+                    <p>Ankth, depresion dhe vetëbesim i ulët. Në raste ekstreme, mund të çojë në vetëdëmtim ose tentativa për vetëvrasje.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-users-slash"></i>
+                    <h3>Efektet Sociale dhe Akademike</h3>
+                    <p>Performancë e dobët në shkollë ose në punë për shkak të stresit të vazhdueshëm. Vështirësi në krijimin e marrëdhënieve të shëndetshme me të tjerët.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-exclamation-circle"></i>
+                    <h3>Efektet në Shoqëri</h3>
+                    <p>Krijimi i një kulture armiqësie dhe negativiteti në internet. Rritja e rasteve të abuzimit dhe shantazhit online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seksioni i Zgjidhjeve -->
+    <section id="zgjidhjet" class="section-with-bg">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInLeft">Si të Parandalojmë dhe Luftojmë Bullizmin Kibernetik?</h2>
+            <div class="card-grid">
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-users-cog"></i>
+                    <h3>Roli i Prindërve dhe Mësuesve</h3>
+                    <p>Monitorimi i aktiviteteve online pa shkelur privatësinë e fëmijëve. Edukimi mbi sigurinë dixhitale dhe inkurajimi i komunikimit të hapur.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-shield-alt"></i>
+                    <h3>Roli i Platformave Dixhitale</h3>
+                    <p>Zhvillimi i sistemeve më të mira për të raportuar dhe ndaluar bullizmin online. Vendosja e masave më të forta kundër profileve të rreme dhe përmbajtjeve ofenduese.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-gavel"></i>
+                    <h3>Roli i Ligjeve dhe Politikave</h3>
+                    <p>Zbatimi i ligjeve më të rrepta për të dënuar ata që ushtrojnë bullizëm online. Fushata ndërgjegjësuese për të informuar njerëzit mbi pasojat ligjore të bullizmit kibernetik.</p>
+                </div>
+                <div class="card animate__animated animate__fadeInUp">
+                    <i style="color: black;" class="fas fa-user-shield"></i>
+                    <h3>Roli i Individëve</h3>
+                    <p>Mbrojtja e informacionit personal, raportimi i bullizmit dhe mbështetja e viktimave.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seksioni i Statistikave -->
+    <section id="statistikat" class="section-with-cards">
+        <div class="container">
+            <h2 style="color: white;" class="animate__animated animate__fadeInLeft">Statistika dhe Raste Studimore</h2>
+            <div class="stats">
+                <div class="stat animate__animated animate__fadeInUp">
+                    <h3 style="color: white;">1 në 3</h3>
+                    <p style="color: white;">Adoleshentë në mbarë botën kanë përjetuar bullizëm kibernetik.</p>
+                </div>
+                <div class="stat animate__animated animate__fadeInUp">
+                    <h3 style="color: white;">50%</h3>
+                    <p style="color: white;">Rritje e rasteve pas pandemisë.</p>
+                </div>
+                <div class="stat animate__animated animate__fadeInUp">
+                    <h3 style="color: white;">2 herë</h3>
+                    <p style="color: white;">Më shumë gjasa për ankth dhe depresion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Ky projekt u realizua nga Fiuanto Blliku dhe Brikena Maloku, nxënës tē gjimnazit "18-Tetori"</p>
+    </footer>
+
+    <!-- Script për animacione -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
+    <script>
+        ScrollReveal().reveal('.animate__animated', { delay: 300, distance: '50px', duration: 1000, easing: 'ease-in-out' });
+    </script>
+</body>
+</html>
